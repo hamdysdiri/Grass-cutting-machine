@@ -1,5 +1,6 @@
 package unit;
 
+import com.grass.GrassMachin;
 import org.junit.jupiter.api.Test;
 
 public class GrassMachineTest {
