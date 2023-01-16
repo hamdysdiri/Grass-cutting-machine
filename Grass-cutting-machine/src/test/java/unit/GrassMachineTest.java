@@ -1,20 +1,20 @@
 package unit;
 
-import com.grass.GrassMachin;
+import com.grass.GrassMachine;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class GrassMachineTest {
-    private String command ="X";
+    private String command ="3 3 qsdqsdqsqsd";
 
     @Test
     public void shouldCommand(){
-        new GrassMachin().command(command);
+        new GrassMachine().command(command);
     }
 
     @Test
-    public void shouldCommandStartWIthTwoNumbersWithSpaceBetween(){
-        assertThat(new GrassMachin().test(command)).isEqualTo(true);
+    public void shouldCommandStartWIIthTwoDigitsSeparatedByWhiteSpace(){
+        assertThat(new GrassMachine().test(command)).isEqualTo(true);
     }
 }
