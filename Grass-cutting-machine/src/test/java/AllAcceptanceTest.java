@@ -11,10 +11,7 @@ public class AllAcceptanceTest {
 
     @Test
     public void GivenCommand_WhenVerifyIfMeetThePattern_ThenCommandChecked(){
-        assertThat(new GrassMachine().verifyFirstLineYardCommand(firstLine)).isEqualTo(true);
-        assertThat(new GrassMachine().verifyPosition(secondLine)).isEqualTo(true);
-        assertThat(new GrassMachine().verifyInstructions(ThirdLine)).isEqualTo(true);
-        assertThat(new GrassMachine().verifyPosition(secondLine)).isEqualTo(true);
-        assertThat(new GrassMachine().verifyInstructions(FourthLine)).isEqualTo(true);
+        assertThat(new ReadInput().verifyOrderOfInput()).isEqualTo(true);
     }
+
 }
