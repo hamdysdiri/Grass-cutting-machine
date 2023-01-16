@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class GrassMachineTest {
-    private String command ="3 3 1 2 N qsdqsdqsqsd";
+    private String command ="5 5 1 2 N GAGAGAGAA";
 
     @Test
     public void shouldCommand(){
