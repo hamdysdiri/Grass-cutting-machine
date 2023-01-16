@@ -4,9 +4,10 @@ import com.grass.GrassMachin;
 import org.junit.jupiter.api.Test;
 
 public class GrassMachineTest {
+    private String command ="X";
+
     @Test
     public void shouldCommand(){
-        String command ="X";
         new GrassMachin().command(command);
     }
 }
