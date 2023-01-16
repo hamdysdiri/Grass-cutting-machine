@@ -7,7 +7,7 @@ public class GrassMachine {
     }
 
     public boolean test(String command) {
-        Pattern p = Pattern.compile("\\d\\s\\d\\s\\d\\s\\d\\s[N,E,S,W]\\s[G,D]{0,}[A]{0,}");
+        Pattern p = Pattern.compile("\\d\\s\\d\\s\\d\\s\\d\\s[N,E,S,W]\\s([G,D]{0,}[A]{0,})*");
         return Pattern.matches(String.valueOf(p), command) ;
     }
 }

@@ -14,7 +14,7 @@ public class GrassMachineTest {
     }
 
     @Test
-    public void shouldCommandStartWithFourDigitsSeparatedByWhiteSpaceAndOneDirection(){
+    public void shouldCommandHaveAPattern(){
         assertThat(new GrassMachine().test(command)).isEqualTo(true);
     }
 
