@@ -5,6 +5,6 @@ public class GrassMachin {
     }
 
     public boolean test(String command) {
-        return true;
+        return Character.isDigit(command.charAt(0));
     }
 }
