@@ -3,6 +3,8 @@ package unit;
 import com.grass.GrassMachin;
 import org.junit.jupiter.api.Test;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 public class GrassMachineTest {
     private String command ="X";
 
@@ -13,6 +15,6 @@ public class GrassMachineTest {
 
     @Test
     public void shouldCommandStartWIthTwoNumbersWithSpaceBetween(){
-        new GrassMachin().test(command);
+        assertThat(new GrassMachin().test(command)).isEqualTo(true);
     }
 }
