@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class GrassMachineTest {
-    private String command ="3 3 1 2 qsdqsdqsqsd";
+    private String command ="3 3 1 2 N qsdqsdqsqsd";
 
     @Test
     public void shouldCommand(){
@@ -14,7 +14,7 @@ public class GrassMachineTest {
     }
 
     @Test
-    public void shouldCommandStartWithFourDigitsSeparatedByWhiteSpace(){
+    public void shouldCommandStartWithFourDigitsSeparatedByWhiteSpaceAndOneDirection(){
         assertThat(new GrassMachine().test(command)).isEqualTo(true);
     }
 
