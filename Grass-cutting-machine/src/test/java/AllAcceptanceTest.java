@@ -7,12 +7,12 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class AllAcceptanceTest {
     private String firstLine ="5 5";
     private String secondLine ="1 2 N";
-    private String ThirdLine ="GAGAGAGAA";
-    private String FourthLine ="GAGAGAGAA";
+    private String thirdLine ="GAGAGAGAA";
+    private String fourthLine ="GAGAGAGAA";
 
     @Test
     public void GivenCommand_WhenVerifyIfMeetThePattern_ThenCommandChecked(){
-        assertThat(new ReadInput().verifyOrderOfInput()).isEqualTo(true);
+        assertThat(new ReadInput(new GrassMachine()).verifyOrderOfInput(firstLine, secondLine, thirdLine)).isEqualTo(true);
     }
 
 }
