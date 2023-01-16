@@ -10,4 +10,9 @@ public class GrassMachineTest {
     public void shouldCommand(){
         new GrassMachin().command(command);
     }
+
+    @Test
+    public void shouldCommandStartWIthTwoNumbersWithSpaceBetween(){
+        new GrassMachin().test(command);
+    }
 }
