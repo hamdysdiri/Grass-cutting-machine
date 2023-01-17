@@ -85,7 +85,7 @@ public class GrassMachineTest {
         assertThat(grassMachine.getPosition()).isEqualTo("x=1, y=1, O=W");
 
         // If the position after movement is outside the yard, the machine will not move step
-        Yard yard = new Yard("2 2");
+        Yard yard = new Yard("1 1");
         GrassMachine grassMachine1 = new GrassMachine(yard);
         grassMachine1.putOnPosition(positionLine);
         grassMachine1.move("A");
@@ -128,7 +128,7 @@ public class GrassMachineTest {
         grassMachine.putOnPosition("1 2 N");
         grassMachine.move("GAGAGAGAA");
         assertThat(grassMachine.getPosition()).isEqualTo("x=1, y=3, O=N");
-        
+
         grassMachine.putOnPosition("3 3 E");
         grassMachine.move("AADAADADDA");
         assertThat(grassMachine.getPosition()).isEqualTo("x=5, y=1, O=E");

@@ -7,7 +7,7 @@ public class Yard {
 
     public Yard(String yardCommandSize) {
         if (verifyFirstLineYardCommand(yardCommandSize))
-            this.yard= new int[Integer.parseInt(String.valueOf(yardCommandSize.charAt(0)))][Integer.parseInt(String.valueOf(yardCommandSize.charAt(2)))];
+            this.yard= new int[Integer.parseInt(String.valueOf(yardCommandSize.charAt(0))) + 1][Integer.parseInt(String.valueOf(yardCommandSize.charAt(2))) + 1 ];
     }
 
     public int[][] getYard() {
