@@ -8,7 +8,7 @@ public class ReadInput {
     }
 
     public boolean verifyOrderOfInput(String firstCommand, String secondCommand, String thirdCommand) {
-       if( this.grassMachine.verifyFirstLineYardCommand(firstCommand)
+       if( new Yard(firstCommand).verifyFirstLineYardCommand(firstCommand)
         && this.grassMachine.verifyPosition(secondCommand)
          && this.grassMachine.verifyInstructions(thirdCommand)){
            return true;
