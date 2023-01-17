@@ -65,6 +65,7 @@ public class GrassMachine {
         return Objects.hash(x, y, oritentation);
     }
 
+    // with this algorithm we can print the foot print of all machine and find where the grass is not cut
     public void move(String instructionsCommand) {
         instructionsCommand.chars().forEach(character -> {
             if (character == G){

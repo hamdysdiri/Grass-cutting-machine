@@ -7,12 +7,15 @@ public class ReadInput {
         this.grassMachine = grassMachine;
     }
 
-    public boolean verifyOrderOfInput(String firstCommand, String secondCommand, String thirdCommand) {
-       if( new Yard(firstCommand).verifyFirstLineYardCommand(firstCommand)
-        && this.grassMachine.verifyPosition(secondCommand)
-         && this.grassMachine.verifyInstructions(thirdCommand)){
-           return true;
-       }
-       return false;
+    public boolean verifyOrderOfInput(String firstCommand, String secondCommand, String thirdCommand,
+                                      String fourthLine, String fifthLine) {
+        if (new Yard(firstCommand).verifyFirstLineYardCommand(firstCommand)
+                && this.grassMachine.verifyPosition(secondCommand)
+                && this.grassMachine.verifyInstructions(thirdCommand)
+                && this.grassMachine.verifyPosition(fourthLine)
+                && this.grassMachine.verifyInstructions(fifthLine)) {
+            return true;
+        }
+        return false;
     }
 }
