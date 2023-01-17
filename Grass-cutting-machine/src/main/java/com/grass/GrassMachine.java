@@ -57,6 +57,12 @@ public class GrassMachine {
     public int hashCode() {
         return Objects.hash(x, y, oritentation);
     }
+
+    public void move(String instructionsCommand) {
+        instructionsCommand.chars().forEach(character -> {
+
+        });
+    }
 }
 
 
