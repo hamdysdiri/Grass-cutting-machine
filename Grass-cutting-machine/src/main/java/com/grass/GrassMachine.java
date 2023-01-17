@@ -85,6 +85,25 @@ public class GrassMachine {
                     return;
                 }
             }
+            if (character == D){
+                if (Oritentation.N.equals(this.oritentation)){
+                    this.oritentation = Oritentation.E;
+                    return;
+                }
+                if (Oritentation.W.equals(this.oritentation)){
+                    this.oritentation = Oritentation.N;
+                    return;
+                }
+                if (Oritentation.S.equals(this.oritentation)){
+                    this.oritentation = Oritentation.W;
+                    return;
+                }
+                if (Oritentation.E.equals(this.oritentation)){
+                    this.oritentation = Oritentation.S;
+                    return;
+                }
+
+            }
         });
     }
 

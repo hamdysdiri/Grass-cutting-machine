@@ -66,5 +66,22 @@ public class GrassMachineTest {
         grassMachine.move("GGGGGGG");
         assertThat(grassMachine.getPosition()).isEqualTo("x=1, y=1, O=E");
 
+        grassMachine.putOnPosition(positionLine);
+        grassMachine.move("DDDD");
+        assertThat(grassMachine.getPosition()).isEqualTo("x=1, y=1, O=N");
+
+        grassMachine.putOnPosition(positionLine);
+        grassMachine.move("D");
+        assertThat(grassMachine.getPosition()).isEqualTo("x=1, y=1, O=E");
+
+        grassMachine.putOnPosition(positionLine);
+        grassMachine.move("DD");
+        assertThat(grassMachine.getPosition()).isEqualTo("x=1, y=1, O=S");
+
+        grassMachine.putOnPosition(positionLine);
+        grassMachine.move("DDD");
+        assertThat(grassMachine.getPosition()).isEqualTo("x=1, y=1, O=W");
+
+
     }
 }
