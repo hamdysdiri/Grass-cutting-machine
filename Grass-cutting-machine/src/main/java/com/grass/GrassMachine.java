@@ -12,4 +12,7 @@ public class GrassMachine {
         Pattern p = Pattern.compile("([G,D]{0,}[A]{0,})*"); // e,g GAGAGGGGAGAAAAA
         return Pattern.matches(String.valueOf(p), command) ;
     }
+
+    public void putOnPosition() {
+    }
 }

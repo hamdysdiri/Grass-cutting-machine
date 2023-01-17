@@ -20,4 +20,8 @@ public class GrassMachineTest {
         assertThat(new GrassMachine().verifyInstructions(instructionsCommand)).isEqualTo(true);
     }
 
+    @Test
+    public void shouldGrassMachineBeOnPoistion(){
+        new GrassMachine().putOnPosition();
+    }
 }
