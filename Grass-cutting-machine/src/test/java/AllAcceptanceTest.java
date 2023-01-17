@@ -1,5 +1,6 @@
 import com.grass.GrassMachine;
 import com.grass.ReadInput;
+import com.grass.Yard;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -12,7 +13,7 @@ public class AllAcceptanceTest {
 
     @Test
     public void GivenCommand_WhenVerifyIfMeetThePattern_ThenCommandChecked(){
-        assertThat(new ReadInput(new GrassMachine()).verifyOrderOfInput(firstLine, secondLine, thirdLine)).isEqualTo(true);
+        assertThat(new ReadInput(new GrassMachine(new Yard(firstLine))).verifyOrderOfInput(firstLine, secondLine, thirdLine)).isEqualTo(true);
     }
 
 }
