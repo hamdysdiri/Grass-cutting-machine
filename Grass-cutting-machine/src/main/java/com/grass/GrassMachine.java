@@ -8,8 +8,10 @@ import java.util.regex.Pattern;
 
 public class GrassMachine {
 
-    private static String G = "G";
-    private static String D = "D";
+    private static char G = 'G';
+    private static char D = 'D';
+    private static char A = 'A';
+
     private Yard yard;
 
     private int x, y;
@@ -65,7 +67,7 @@ public class GrassMachine {
 
     public void move(String instructionsCommand) {
         instructionsCommand.chars().forEach(character -> {
-            if (G.equals(character)){
+            if (character == G){
                 if (Oritentation.N.equals(this.oritentation)){
                     this.oritentation = Oritentation.W;
                 }
