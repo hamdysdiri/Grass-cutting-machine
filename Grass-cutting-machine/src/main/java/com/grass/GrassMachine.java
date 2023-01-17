@@ -41,7 +41,7 @@ public class GrassMachine {
         if (isPositionIsGood(i, j)) {
             this.x = j;
             this.y = i;
-            this.yard.getYard()[1][1] = 1;
+            this.yard.getYard()[x][y] = 1;
             this.oritentation = Oritentation.valueOf(String.valueOf(positionLine.charAt(4)));
 
         } else throw new Exception("error, machine grass will be off the yard");
@@ -100,6 +100,39 @@ public class GrassMachine {
                 }
                 if (Oritentation.E.equals(this.oritentation)){
                     this.oritentation = Oritentation.S;
+                    return;
+                }
+
+            }
+            if (character == A){
+                if (Oritentation.N.equals(this.oritentation)){
+                    int potentialMove = this.y +1;
+                    if (isPositionIsGood(x,potentialMove)){
+                        this.y = potentialMove;
+                        this.yard.getYard()[this.x][this.y] = 1;
+                        return;
+                    }
+                }
+                if (Oritentation.W.equals(this.oritentation)){
+                    int potentialMove = this.x -1;
+                    if (isPositionIsGood(x,potentialMove)) {
+                        this.x = potentialMove;
+                        this.yard.getYard()[this.x][this.y] = 1;
+                        return;
+                    }
+
+                }
+                if (Oritentation.S.equals(this.oritentation)){
+                    int potentialMove= this.y -1;
+                    if (isPositionIsGood(x,potentialMove)) {
+                        this.y = potentialMove;
+                        this.yard.getYard()[this.x][this.y] = 1;
+                        return;
+                    }
+                }
+                if (Oritentation.E.equals(this.oritentation)){
+                    this.y = this.y +1;
+                    this.yard.getYard()[this.x][this.y] = 1;
                     return;
                 }
 
