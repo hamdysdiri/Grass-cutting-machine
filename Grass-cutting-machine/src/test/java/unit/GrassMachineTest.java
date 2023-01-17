@@ -133,5 +133,7 @@ public class GrassMachineTest {
         grassMachine.move("AADAADADDA");
         assertThat(grassMachine.getPosition()).isEqualTo("x=5, y=1, O=E");
 
+        // with this algorithm we can print the foot print of all machine
+        this.yard.getMachinePath();
     }
 }

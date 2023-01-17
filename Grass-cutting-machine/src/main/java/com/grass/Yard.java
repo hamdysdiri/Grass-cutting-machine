@@ -1,5 +1,6 @@
 package com.grass;
 
+import java.util.Arrays;
 import java.util.regex.Pattern;
 
 public class Yard {
@@ -19,5 +20,8 @@ public class Yard {
         return Pattern.matches(String.valueOf(p), command) ;
     }
 
+    public void getMachinePath() {
+        System.out.println(Arrays.deepToString(this.yard));
+    }
 
 }
