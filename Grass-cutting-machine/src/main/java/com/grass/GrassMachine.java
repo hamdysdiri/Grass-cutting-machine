@@ -106,7 +106,7 @@ public class GrassMachine {
             }
             if (character == A){
                 if (Oritentation.N.equals(this.oritentation)){
-                    int potentialMove = this.y +1;
+                    int potentialMove = this.y + 1;
                     if (isPositionIsGood(x,potentialMove)){
                         this.y = potentialMove;
                         this.yard.getYard()[this.x][this.y] = 1;
@@ -131,11 +131,14 @@ public class GrassMachine {
                     }
                 }
                 if (Oritentation.E.equals(this.oritentation)){
-                    this.y = this.y +1;
-                    this.yard.getYard()[this.x][this.y] = 1;
-                    return;
-                }
+                    int potentialMove = this.x +1;
+                    if (isPositionIsGood(x,potentialMove)) {
+                        this.x = potentialMove;
+                        this.yard.getYard()[this.x][this.y] = 1;
+                        return;
 
+                    }
+                }
             }
         });
     }

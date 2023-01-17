@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class GrassMachineTest {
 
-    private String yardCommandSize ="2 2";
+    private String yardCommandSize ="4 4";
     private String positionLine ="1 1 N";
     private String instructionsCommand ="GAGAGAGAA";
 
@@ -83,14 +83,17 @@ public class GrassMachineTest {
         assertThat(grassMachine.getPosition()).isEqualTo("x=1, y=1, O=W");
 
         // If the position after movement is outside the yard, the machine will not move step
-        grassMachine.putOnPosition(positionLine);
-        grassMachine.move("A");
-        assertThat(grassMachine.getPosition()).isEqualTo("x=1, y=1, O=N");
+        Yard yard = new Yard("2 2");
+        GrassMachine grassMachine1 = new GrassMachine(yard);
+        grassMachine1.putOnPosition(positionLine);
+        grassMachine1.move("A");
+        assertThat(grassMachine1.getPosition()).isEqualTo("x=1, y=1, O=N");
 
 
-        grassMachine.putOnPosition(positionLine);
-        grassMachine.move("AAAA");
-        assertThat(grassMachine.getPosition()).isEqualTo("x=1, y=1, O=N");
+        // If the position after movement is outside the yard, the machine will not move step
+        grassMachine1.putOnPosition(positionLine);
+        grassMachine1.move("AAAA");
+        assertThat(grassMachine1.getPosition()).isEqualTo("x=1, y=1, O=N");
 
         grassMachine.putOnPosition("1 1 W");
         grassMachine.move("A");
@@ -103,6 +106,27 @@ public class GrassMachineTest {
         grassMachine.putOnPosition("1 1 E");
         grassMachine.move("A");
         assertThat(grassMachine.getPosition()).isEqualTo("x=2, y=1, O=E");
+
+        grassMachine.putOnPosition("1 1 N");
+        grassMachine.move("A");
+        assertThat(grassMachine.getPosition()).isEqualTo("x=1, y=2, O=N");
+
+        grassMachine.putOnPosition("1 2 N");
+        grassMachine.move("GA");
+        assertThat(grassMachine.getPosition()).isEqualTo("x=0, y=2, O=W");
+
+        grassMachine.putOnPosition("1 2 N");
+        grassMachine.move("GAGA");
+        assertThat(grassMachine.getPosition()).isEqualTo("x=0, y=1, O=S");
+
+        grassMachine.putOnPosition("1 2 N");
+        grassMachine.move("GAGAGA");
+        assertThat(grassMachine.getPosition()).isEqualTo("x=1, y=1, O=E");
+
+        grassMachine.putOnPosition("1 2 N");
+        grassMachine.move("GAGAGAGAA");
+        assertThat(grassMachine.getPosition()).isEqualTo("x=1, y=3, O=N");
+
 
 
     }
