@@ -63,6 +63,12 @@ public class GrassMachine {
 
         });
     }
+
+    public String getPosition() {
+        return "x=" + x +
+                ", y=" + y +
+                ", O=" + oritentation;
+    }
 }
 
 
