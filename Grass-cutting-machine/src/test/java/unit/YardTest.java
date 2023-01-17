@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Java6Assertions.assertThat;
 
 public class YardTest {
-    private String yardCommandSize ="1 1";
+    private String yardCommandSize ="4 4";
 
     @Test
     public void shouldCommandHavePatternToSize(){

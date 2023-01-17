@@ -1,10 +1,22 @@
 package com.grass;
 
+import java.util.Objects;
 import java.util.regex.Pattern;
 
 public class GrassMachine {
+    private Yard yard;
+
+    private int x , y;
+    public GrassMachine(Yard yard) {
+        this.yard=yard;
+        this.x = 0;
+        this.y = 0;
+    }
+
     public boolean verifyPosition(String command) {
+
         Pattern p = Pattern.compile("\\d\\s\\d\\s[N,E,S,W]"); // e,g 3 1 N
+
         return Pattern.matches(String.valueOf(p), command) ;
     }
 
@@ -13,6 +25,33 @@ public class GrassMachine {
         return Pattern.matches(String.valueOf(p), command) ;
     }
 
-    public void putOnPosition() {
+    public void putOnPosition(String positionLine) throws Exception {
+        int i = Integer.parseInt(String.valueOf(positionLine.charAt(2)));
+        int j = Integer.parseInt(String.valueOf(positionLine.charAt(0)));
+        if (isPositionIsGood(i, j)){
+            this.x = j;
+            this.y = i;
+            this.yard.getYard()[1][1] = 1;
+
+        }
+        else throw new Exception("error, machine grass will be off the yard");
+    }
+
+    private boolean isPositionIsGood(int i, int j) {
+        return j <= this.yard.getYard().length - 1 &&
+                i <= this.yard.getYard()[0].length - 1;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        GrassMachine that = (GrassMachine) o;
+        return x == that.x && y == that.y;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(x, y);
     }
 }

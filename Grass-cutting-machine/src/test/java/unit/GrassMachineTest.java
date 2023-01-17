@@ -7,21 +7,28 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class GrassMachineTest {
-    private String positionLine ="1 2 N";
+
+    private String yardCommandSize ="2 2";
+    private String positionLine ="1 1 N";
     private String instructionsCommand ="GAGAGAGAA";
 
+    private Yard yard = new Yard(yardCommandSize);
+    private GrassMachine grassMachine = new GrassMachine(yard);
     @Test
     public void shouldCommandHavePatternForPosition(){
-        assertThat(new GrassMachine().verifyPosition(positionLine)).isEqualTo(true);
+        assertThat(new GrassMachine(new Yard(yardCommandSize)).verifyPosition(positionLine)).isEqualTo(true);
     }
 
     @Test
     public void shouldCommandHavePatternForInstructions(){
-        assertThat(new GrassMachine().verifyInstructions(instructionsCommand)).isEqualTo(true);
+        assertThat(new GrassMachine(new Yard(yardCommandSize)).verifyInstructions(instructionsCommand)).isEqualTo(true);
     }
 
     @Test
-    public void shouldGrassMachineBeOnPoistion(){
-        new GrassMachine().putOnPosition();
+    public void shouldGrassMachineBeOnPosition() throws Exception {
+        grassMachine.putOnPosition(positionLine);
+        GrassMachine expected = new GrassMachine(new Yard("2 2"));
+        expected.putOnPosition("1 1 N");
+        assertThat(grassMachine.hashCode()).isEqualTo(expected.hashCode());
     }
 }
