@@ -1,10 +1,15 @@
 package com.grass;
 
+import javafx.geometry.Orientation;
+
 import java.util.Objects;
 import java.util.regex.Pattern;
 
 
 public class GrassMachine {
+
+    private static String G = "G";
+    private static String D = "D";
     private Yard yard;
 
     private int x, y;
@@ -60,7 +65,11 @@ public class GrassMachine {
 
     public void move(String instructionsCommand) {
         instructionsCommand.chars().forEach(character -> {
-
+            if (G.equals(character)){
+                if (Oritentation.N.equals(this.oritentation)){
+                    this.oritentation = Oritentation.W;
+                }
+            }
         });
     }
 
