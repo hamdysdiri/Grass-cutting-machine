@@ -3,38 +3,41 @@ package com.grass;
 import java.util.Objects;
 import java.util.regex.Pattern;
 
+
 public class GrassMachine {
     private Yard yard;
 
-    private int x , y;
+    private int x, y;
+
+    private Oritentation oritentation;
+
     public GrassMachine(Yard yard) {
-        this.yard=yard;
-        this.x = 0;
-        this.y = 0;
+        this.yard = yard;
+
     }
 
     public boolean verifyPosition(String command) {
 
         Pattern p = Pattern.compile("\\d\\s\\d\\s[N,E,S,W]"); // e,g 3 1 N
 
-        return Pattern.matches(String.valueOf(p), command) ;
+        return Pattern.matches(String.valueOf(p), command);
     }
 
     public boolean verifyInstructions(String command) {
         Pattern p = Pattern.compile("([G,D]{0,}[A]{0,})*"); // e,g GAGAGGGGAGAAAAA
-        return Pattern.matches(String.valueOf(p), command) ;
+        return Pattern.matches(String.valueOf(p), command);
     }
 
     public void putOnPosition(String positionLine) throws Exception {
         int i = Integer.parseInt(String.valueOf(positionLine.charAt(2)));
         int j = Integer.parseInt(String.valueOf(positionLine.charAt(0)));
-        if (isPositionIsGood(i, j)){
+        if (isPositionIsGood(i, j)) {
             this.x = j;
             this.y = i;
             this.yard.getYard()[1][1] = 1;
+            this.oritentation = Oritentation.valueOf(String.valueOf(positionLine.charAt(4)));
 
-        }
-        else throw new Exception("error, machine grass will be off the yard");
+        } else throw new Exception("error, machine grass will be off the yard");
     }
 
     private boolean isPositionIsGood(int i, int j) {
@@ -47,11 +50,13 @@ public class GrassMachine {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         GrassMachine that = (GrassMachine) o;
-        return x == that.x && y == that.y;
+        return x == that.x && y == that.y && oritentation == that.oritentation;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(x, y);
+        return Objects.hash(x, y, oritentation);
     }
 }
+
+
