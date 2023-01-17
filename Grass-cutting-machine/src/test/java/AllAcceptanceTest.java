@@ -9,7 +9,6 @@ public class AllAcceptanceTest {
     private String firstLine ="5 5";
     private String secondLine ="1 2 N";
     private String thirdLine ="GAGAGAGAA";
-    private String fourthLine ="GAGAGAGAA";
 
     @Test
     public void GivenCommand_WhenVerifyIfMeetThePattern_ThenCommandChecked(){
