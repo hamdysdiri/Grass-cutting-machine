@@ -45,9 +45,7 @@ public class GrassMachineTest {
 
     @Test()
     public void shouldGrassMachineBeMove() throws Exception {
-
         grassMachine.putOnPosition(positionLine);
-
-
+        grassMachine.move(instructionsCommand);
     }
 }
