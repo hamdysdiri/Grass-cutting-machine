@@ -46,8 +46,8 @@ public class GrassMachineTest {
     @Test()
     public void shouldGrassMachineBeMove() throws Exception {
         grassMachine.putOnPosition(positionLine);
-        grassMachine.move("GA");
-        assertThat(grassMachine.getPosition()).isEqualTo("x=1, y=1, O=W");
+        grassMachine.move("GGGG");
+        assertThat(grassMachine.getPosition()).isEqualTo("x=1, y=1, O=N");
 
     }
 }
