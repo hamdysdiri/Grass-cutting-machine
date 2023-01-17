@@ -4,13 +4,15 @@ import com.grass.GrassMachine;
 import com.grass.Yard;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class GrassMachineTest {
 
-    private String yardCommandSize ="4 4";
+    private String yardCommandSize ="5 5";
     private String positionLine ="1 1 N";
     private String instructionsCommand ="GAGAGAGAA";
 
@@ -126,8 +128,10 @@ public class GrassMachineTest {
         grassMachine.putOnPosition("1 2 N");
         grassMachine.move("GAGAGAGAA");
         assertThat(grassMachine.getPosition()).isEqualTo("x=1, y=3, O=N");
-
-
+        
+        grassMachine.putOnPosition("3 3 E");
+        grassMachine.move("AADAADADDA");
+        assertThat(grassMachine.getPosition()).isEqualTo("x=5, y=1, O=E");
 
     }
 }
